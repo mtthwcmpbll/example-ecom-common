@@ -1,0 +1,3 @@
+com/example/ecom/common/event/OrderCreatedEvent$OrderItemDto.class
+com/example/ecom/common/event/OrderCreatedEvent.class
+com/example/ecom/common/dto/ApiResponse.class
