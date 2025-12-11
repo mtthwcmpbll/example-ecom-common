@@ -1,12 +1,21 @@
 package com.example.ecom.common.event;
 
+import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
 import java.math.BigDecimal;
 import java.util.List;
 
 public class OrderCreatedEvent {
+    @NotNull
     private String orderId;
+    @NotNull
     private Long customerId;
+    @DecimalMin("0.0")
     private BigDecimal totalAmount;
+    @NotEmpty
     private List<OrderItemDto> items;
 
     public OrderCreatedEvent() {
@@ -52,7 +61,9 @@ public class OrderCreatedEvent {
     }
 
     public static class OrderItemDto {
+        @NotNull
         private String productId;
+        @Min(1)
         private Integer quantity;
 
         public OrderItemDto() {
